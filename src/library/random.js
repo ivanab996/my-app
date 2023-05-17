@@ -1,5 +1,5 @@
-const adjectives = ['Blue', 'Green', 'Lilac'];
-const nouns = ['Lagoon', 'Butterfly', 'Car'];
+const adjectives = ['Cyber', 'Green', 'Evil'];
+const nouns = ['Zerox', 'Gun', 'Poet'];
 
 export function getRandomName() {
     const adjectiveIndex = Math.floor(Math.random() * adjectives.length);
