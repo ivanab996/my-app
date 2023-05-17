@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { SignInForm } from "../components/SignInForm";
 import { AppContext } from "../contexts/AppContext";
+import "../styles/App.css";
 
 
 export function SignInPage() {

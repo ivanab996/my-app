@@ -1,6 +1,24 @@
-.App {
+body {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    color: white;
+    background-color: black;
   }
+
+input {
+  background-color: black;
+  color: white;
+}
+
+a {
+  color: green;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  margin: 10px;
+  font-size: 20px;
+}
+

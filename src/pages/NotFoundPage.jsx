@@ -1,4 +1,4 @@
-
+import "../styles/App.css";
 
 export function NotFoundPage() {
     return (

@@ -5,6 +5,7 @@ import { MessageForm } from "../components/MessageForm";
 import { AppContext } from "../contexts/AppContext";
 import { Navigate } from "react-router-dom";
 import { useEffect } from "react";
+import "../styles/App.css";
 
 
 export function ChatPage() {
@@ -70,9 +71,8 @@ export function ChatPage() {
     }
 
     return (
-        <div>
-            Chat page
-            <button type="button" onClick={handleSignOut}>Sign out</button>
+        <div className="chat-page">
+            <button className="sign-out-button" type="button" onClick={handleSignOut}>Sign out</button>
             <div className="message-list">
                 {messageComponents}
             </div>
