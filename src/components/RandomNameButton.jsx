@@ -7,6 +7,6 @@ export function RandomNameButton(props) {
     }
 
     return (
-        <Button type="button" onClick={handleClick} label="Get random name" />
+        <Button type="button" onClick={handleClick} label="GET RANDOM NAME" />
     );
 }

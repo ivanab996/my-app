@@ -1,15 +1,15 @@
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    color: white;
-    background-color: black;
-  }
-
-input {
   background-color: black;
   color: white;
+}
+
+input {
+  background-color: rgb(21, 21, 21);
+  color: rgb(26, 173, 80);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid  1px rgb(26, 173, 80);
 }
 
 a {
@@ -22,3 +22,47 @@ a {
   font-size: 20px;
 }
 
+.avatar-images {
+  border-radius: 20%;
+}
+
+.avatar-button-left {
+  width: 30px;
+  height: 30px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  background-color: transparent;
+}
+
+.avatar-button-right {
+  width: 30px;
+  height: 30px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  background-color: transparent;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.form-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 700px;
+  height: 700px;
+  background-color: rgb(21, 21, 21);
+  border-radius: 1%;
+}
+
+.avatar-pick {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

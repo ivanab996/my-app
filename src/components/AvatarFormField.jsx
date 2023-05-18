@@ -28,9 +28,11 @@ export function AvatarFormField(props) {
 
     return (
         <FormField>
-            <button type="button" onClick={handlePreviousClick}>Previous</button>
-            <img src={avatarImages[index]} alt={index} width={100} />
-            <button type="button" onClick={handleNextClick}>Next</button>
+            <div className="avatar-pick">
+            <button className="avatar-button-left" type="button" onClick={handlePreviousClick}></button>
+            <img className="avatar-images" src={avatarImages[index]} alt={index} width={100} />
+            <button className="avatar-button-right" type="button" onClick={handleNextClick}></button>
+            </div>
         </FormField>
     )
 }

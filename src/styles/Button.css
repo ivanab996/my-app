@@ -1,10 +1,10 @@
 button {
   padding: 5px 10px;
   font-size: 16px;
-  background-color: rgb(67, 67, 67);
-  color: rgb(217, 255, 207);
+  background-color: rgb(44, 44, 44);
+  color: rgb(26, 173, 80);
   border: none;
-  border-radius: 8px;
+  border-radius: 3px;
   margin: 10px;
 }
 
@@ -13,4 +13,30 @@ button {
   right: 0;
   top: 0;
   display: block;
+}
+
+.avatar-button-left {
+  width: 30px;
+  height: 30px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  border-radius: 8px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  background-color: transparent;
+}
+
+.avatar-button-right {
+  width: 30px;
+  height: 30px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  border-radius: 8px;
+  display: inline-block;
+  padding: 3px;
+  background-color: transparent;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
