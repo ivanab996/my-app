@@ -23,8 +23,8 @@ export function MessageForm(props) {
     }
 
     return (
-        <form className="form-style" onSubmit={handleSubmit}>
-            <InputFormField label="Message"
+        <form className="message-form" onSubmit={handleSubmit}>
+            <InputFormField
                 type="text"
                 value={formState}
                 onChange={handleChange}

@@ -27,7 +27,7 @@ export function SignInForm(props) {
     }
 
     return (
-        <form className="form-style" onSubmit={handleSubmit}>
+        <form className="sign-in-form" onSubmit={handleSubmit}>
             <AvatarFormField onChange={handleAvatarChange} />
             <InputFormField
                 type="text"
