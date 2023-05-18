@@ -30,6 +30,7 @@ export function SignInForm(props) {
         <form className="sign-in-form" onSubmit={handleSubmit}>
             <AvatarFormField onChange={handleAvatarChange} />
             <InputFormField
+                className="sign-in-username-input"
                 type="text"
                 onChange={handleUsernameChange}
                 value={formState} />
@@ -37,7 +38,7 @@ export function SignInForm(props) {
                 <RandomNameButton onRandomName={handleUsernameChange} />
             </FormField>
             <FormField>
-                <Button type="submit" label="Sign in" />
+                <Button className="sign-in-button matrix-txt-layer-button"  type="submit" label="Sign in" />
             </FormField>
         </form>
     );

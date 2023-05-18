@@ -28,9 +28,9 @@ export function AvatarFormField(props) {
 
     return (
         <FormField>
-            <div className="avatar-pick">
+            <div className="avatar-option-choose">
             <button className="avatar-button-left" type="button" onClick={handlePreviousClick}></button>
-            <img className="avatar-images" src={avatarImages[index]} alt={index} width={100} />
+            <img className="sign-in-avatar-img" src={avatarImages[index]} alt={index} width={100} />
             <button className="avatar-button-right" type="button" onClick={handleNextClick}></button>
             </div>
         </FormField>

@@ -9,6 +9,7 @@ export function AppProvider(props) {
     const [ avatarIndex, setAvatarIndex ] = useState(0);
     const [ config, setConfig ] = useState(null);
     const [ error, setError ] = useState(null);
+    const [ activeUser, setActiveUser ] = useState (null);
 
 
     useEffect(() => {
@@ -31,6 +32,8 @@ export function AppProvider(props) {
         <AppContext.Provider value={{
             username: username,
             setUsername: setUsername,
+            activeUser: activeUser,
+            setActiveUser: setActiveUser,
             avatarIndex: avatarIndex,
             setAvatarIndex: setAvatarIndex,
             isSignedIn: username !== '',

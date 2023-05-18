@@ -6,6 +6,7 @@ import { AppContext } from "../contexts/AppContext";
 import { Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import "../styles/App.css";
+import MainLaoyut from "../layouts/MainLayout";
 
 
 export function ChatPage() {
@@ -24,7 +25,9 @@ export function ChatPage() {
 
     function handleSignOut() {
         context.setUsername('');
+        context.setActiveUser(null);
     }
+
 
     const messageComponents = messages.map((message) => {
         return <Message
@@ -71,15 +74,17 @@ export function ChatPage() {
     }
 
     return (
-        <div className="chat-page">
-            <button className="sign-out-button" type="button" onClick={handleSignOut}>Sign out</button>
-            <div className="message-list">
-                {messageComponents}
+        <MainLaoyut> 
+            <div className="chat-page">
+                <button className="sign-out-button" type="button" onClick={handleSignOut}>Sign out</button>
+                <div className="message-list">
+                    {messageComponents}
+                </div>
+                <MessageForm onSubmit={handleSubmit}
+                    username={context.username}
+                    avatarIndex={context.avatarIndex}
+                />
             </div>
-            <MessageForm onSubmit={handleSubmit}
-                username={context.username}
-                avatarIndex={context.avatarIndex}
-            />
-        </div>
-    );
+        </MainLaoyut>
+    )
 };

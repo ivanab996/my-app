@@ -9,7 +9,7 @@ export function InputFormField(props) {
     return (
         <FormField>
             <label>{props.label}</label>
-            <input type={props.type} onChange={handleChange} value={props.value} />
+            <input className={props.className} type={props.type} onChange={handleChange} value={props.value} />
         </FormField>
     );
 };

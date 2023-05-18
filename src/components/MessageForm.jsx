@@ -25,6 +25,7 @@ export function MessageForm(props) {
     return (
         <form className="message-form" onSubmit={handleSubmit}>
             <InputFormField
+                className="message-input"
                 type="text"
                 value={formState}
                 onChange={handleChange}
