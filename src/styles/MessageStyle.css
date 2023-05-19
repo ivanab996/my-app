@@ -1,30 +1,57 @@
-.message {
-    display: flex;
-    margin-top: 10px;
-  }
+.messages {
+  min-height: 519px;
+  padding: 10px 30px 20px 30px;
+}
+
+.message{
+  display: flex;
+  gap: 20px;
+  padding-top: 20px;
+  word-break: break-all;
+}
+
 
 .message-style {
-  display: inline-block;
-}
-  
-.message-text {
-  margin: 10px;
-  padding: 10px;
-  max-width: max-content;;
-  margin: 0;
-  border-radius: 12px;
-  background-color: rgb(31, 31, 31);
-  color: rgb(32, 250, 7);
-  display: inline-block;
-  opacity: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
 }
 
-.message-author {
-  margin: 10px;
-  height: 35px;
-  width: 35px;
+.current-user{
+  flex-direction: row-reverse;
+}
+  
+.message-img{
   border-radius: 50%;
-  display: inline-block;
-  margin: 0 10px -10px;
+  width: 70px;
+  height: 70px;
+}
+
+.message-author{
+  font-size: 16px;
+}
+
+.message-text{
+  background-color: #1E1E1E;
+  max-width: 60%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  border-radius: 0px 10px 10px 10px;
+  color: #27B760;
+}
+
+.current-user-msg-style{
+  align-items: flex-end;
+}
+
+.current-user-message-pop{
+  border-radius: 10px 0px 10px 10px;
+  background-color: #1a7e42;
+  color: white;
+  word-break: break-all;
 }
 

@@ -11,6 +11,9 @@ export function MessageForm(props) {
 
     function handleSubmit(event) {
         event.preventDefault();
+        if (formState.trim() === "") {
+            return;
+        }
         setFormState('');
         props.onSubmit({
             id: Date.now(),
@@ -29,6 +32,7 @@ export function MessageForm(props) {
                 type="text"
                 value={formState}
                 onChange={handleChange}
+                placeholder="Message"
             />
             <SubmitFormField label="Send" />
         </form>

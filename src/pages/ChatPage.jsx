@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { useState } from "react";
 import { Message } from "../components/Message";
 import { MessageForm } from "../components/MessageForm";
@@ -10,24 +10,19 @@ import MainLaoyut from "../layouts/MainLayout";
 
 
 export function ChatPage() {
-    const [ messages, setMessages] = useState([]);
-    const [ client, setClient ] = useState(null);
-    const [ chatRoom, setChatRoom ] = useState(null);
-    const [ ready, setReady ] = useState(false);
+    const [messages, setMessages] = useState([]);
+    const [client, setClient] = useState(null);
+    const [chatRoom, setChatRoom] = useState(null);
+    const [ready, setReady] = useState(false);
     const context = useContext(AppContext);
+    const messagesRef = useRef(null);
 
     function handleSubmit(message) {
         client.publish({
             room: 'basic',
             message: message,
-    });
-}
-
-    function handleSignOut() {
-        context.setUsername('');
-        context.setActiveUser(null);
+        });
     }
-
 
     const messageComponents = messages.map((message) => {
         return <Message
@@ -40,18 +35,15 @@ export function ChatPage() {
 
     useEffect(() => {
         const drone = new window.Scaledrone('vTEtVQcoOGrelJbO');
-       
-        drone.on('open', (error) => {
-          if (error) {
-            console.log(error)
-          } else {
-            const room = drone.subscribe('basic');
-            
-    
 
-            setClient(drone);
-            setChatRoom(room);
-          }
+        drone.on('open', (error) => {
+            if (error) {
+                console.log(error)
+            } else {
+                const room = drone.subscribe('basic');
+                setClient(drone);
+                setChatRoom(room);
+            }
         });
     }, []);
 
@@ -60,31 +52,44 @@ export function ChatPage() {
             chatRoom.on('data', (data) => {
                 setMessages((messages) => {
                     return [...messages, data];
-                });      
+                });
             });
 
             setReady(true);
         }
     }, [chatRoom, ready]);
 
-  
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
+
+    const scrollToBottom = () => {
+        if (messagesRef.current != null) {
+            messagesRef.current.scrollTop = messagesRef?.current?.scrollHeight;
+        }
+    };
 
     if (!context.isSignedIn) {
         return <Navigate to="/" replace />;
     }
 
     return (
-        <MainLaoyut> 
-            <div className="chat-page">
-                <button className="sign-out-button" type="button" onClick={handleSignOut}>Sign out</button>
-                <div className="message-list">
-                    {messageComponents}
+        <>
+            <MainLaoyut>
+
+                <div
+                    className="message-wrap"
+                    ref={messagesRef}
+                >
+                    <div className="messages" >
+                        {messageComponents}
+                    </div>
+                    <MessageForm onSubmit={handleSubmit}
+                        username={context.username}
+                        avatarIndex={context.avatarIndex}
+                    />
                 </div>
-                <MessageForm onSubmit={handleSubmit}
-                    username={context.username}
-                    avatarIndex={context.avatarIndex}
-                />
-            </div>
-        </MainLaoyut>
+            </MainLaoyut>
+        </>
     )
-};
+}
