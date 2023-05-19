@@ -111,15 +111,7 @@ body {
   color: #27B760;
 }
 
-.arrow-btn{
-  cursor: pointer;
-  height: 50px;
-  width: 50px;
-}
 
-.arrow-btn-left{
-  rotate: 180deg;
-}
 
 .sign-in-avatar-img{
   border-radius: 50px;
