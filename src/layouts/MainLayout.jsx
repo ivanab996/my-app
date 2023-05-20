@@ -11,17 +11,23 @@ export default function MainLaoyut({ children }) {
     context.setActiveUser(null);
   }
 
+  
+
   return (
     <>
-    <main className="main">
-      <h1 className="title-main matrix-txt-layer">The Matrix</h1>
-      <div className="container">
-        {children}
-      </div>
-     <Link className="faq-link" to="/faq">
+      <main className="main">
+        <h1 className="title-main matrix-txt-layer">The Matrix</h1>
+        {context.isSignedIn && <button className="sign-out-button" type="button" onClick={handleSignOut}>Sign out</button>}
+        <div className="container">
+          {children}
+        </div>
+      </main>
+      <Link className="faq-link" to="/faq">
         Read The FAQ
       </Link>
-    </main>
     </>
   )
 }
+
+
+
